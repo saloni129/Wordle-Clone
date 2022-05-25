@@ -1,0 +1,27 @@
+from rich.console import Console
+from random import choice
+from words import word_list
+
+
+WELCOME_MESSAGE = f'\n[white on blue] WELCOME TO WORDLE [/]\n'
+PLAYER_INSTRUCTIONS = "You may start guessing\n"
+ALLOWED_GUESSES = 6
+
+
+def correct_place(letter):
+    return f'[black on green]{letter}[/]'
+
+
+def correct_letter(letter):
+    return f'[black on yellow]{letter}[/]'
+
+
+def incorrect_letter(letter):
+    return f'[black on white]{letter}[/]'
+
+
+if __name__ == '__main__':
+    console = Console()
+    chosen_word = choice(word_list)
+    console.print(WELCOME_MESSAGE)
+    console.print(PLAYER_INSTRUCTIONS)
